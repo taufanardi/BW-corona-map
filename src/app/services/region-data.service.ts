@@ -11,8 +11,7 @@ export class RegionDataService {
   private readonly baseUrl: string;
 
   constructor(private http: HttpClient) {
-    // this.baseUrl = '/api/v1/region/';
-    this.baseUrl = '/assets/db.json';
+    this.baseUrl = '/BW-corona-map/assets/db.json';
   }
 
   retrieveRegionData(): Observable<any> {

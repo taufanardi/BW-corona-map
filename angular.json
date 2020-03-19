@@ -119,8 +119,13 @@
               "devServerTarget": "BW-corona-map:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "BW-corona-map"
 }

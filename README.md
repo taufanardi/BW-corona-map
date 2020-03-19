@@ -1,15 +1,11 @@
 # BWCoronaMap
 
-Display a map of coronavirus infections in Baden-Württemberg area.
-Including history graph per area. 
+Display a map of coronavirus infections in Baden-Württemberg area, including history graph per area. 
+Data is taken from https://sozialministerium.baden-wuerttemberg.de/ and updated daily.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng serve /BW-corona-map/` for a dev server. Navigate to `http://localhost:4200/BW-corona-map/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
