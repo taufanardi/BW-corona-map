@@ -37,6 +37,7 @@
          [class.widget-grabbing]="historyHandle.isGrabbing">
 
       <h3 class="widget-title">History Graph {{selectedRegion}}</h3>
+      <p *ngIf="todaysCases">Number of cases today: <span > {{todaysCases}} </span></p>
 
       <button class="widget-grab-handle"
               uxDashboardGrabHandle
@@ -93,12 +94,15 @@
       </button>
 
       <p class="info-title">Today: {{todaysDate}}</p>
-      <p class="info-value m-t text-black">
-        #Cases: <b>{{todaysCases}}</b>
-      </p>
-      <p class="info-value m-t text-black">
-        #Recovery: <i>Coming soon..</i>
-      </p>
+      <ng-container *ngIf="selectedRegion">
+        <p class="info-value m-t text-black">
+          #Cases today: <b>{{todaysCases}}</b>
+        </p>
+        <p class="info-value m-t text-black">
+          #Recovery: <i>Coming soon..</i>
+        </p>
+      </ng-container>
+
       <hr>
       <p class="info-value m-t text-black">
         <i>Display a map of coronavirus infections in Baden-Württemberg area, including history graph per area.<br>

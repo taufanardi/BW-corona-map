@@ -76,9 +76,9 @@ export class AppComponent implements AfterViewInit {
       regions
         .filter(reg => reg.data.id === regionId)
         .forEach((reg, idx) => {
-        this.selectedRegion = reg.data.name;
-        dataset1.push(reg.data.number_of_cases);
-      });
+          this.selectedRegion = reg.data.name;
+          dataset1.push(reg.data.number_of_cases);
+        });
     }
 
     // Prepare colors used in chart
