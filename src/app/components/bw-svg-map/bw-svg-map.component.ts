@@ -1,7 +1,8 @@
-import {AfterViewInit, Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {RegionDataService} from '../../services/region-data.service';
 import svgPanZoom from 'svg-pan-zoom';
 import Hammer from 'hammerjs';
+import {RegionData} from "../../app.component";
 
 @Component({
   selector: 'app-bw-svg-map',
@@ -10,8 +11,26 @@ import Hammer from 'hammerjs';
 })
 export class BwSvgMapComponent implements OnInit, AfterViewInit {
 
+  @ViewChild('panzoomController', {static: true}) private panzoomController: ElementRef;
+
   @Output() public regionClick = new EventEmitter<string>();
-  @ViewChild('panzoomController', {static: true}) panzoomController: ElementRef;
+
+  @Input() public set regionData(data: RegionData[]) {
+    if (data && data.length) {
+      const groupByProperty = 'date';
+      const regionByDate = data.reduce((accumulator, currentData, currentIndex, array) => {
+        (accumulator[currentData[groupByProperty]] = accumulator[currentData[groupByProperty]] || []).push(currentData);
+        return accumulator;
+      }, {});
+
+      const latestData = regionByDate[Object.keys(regionByDate).pop()] as RegionData[];
+      const maxCases = Math.max(...latestData.map(reg => reg.data.number_of_cases));
+      latestData.forEach(reg => {
+        const element = this.elementRef.nativeElement.querySelectorAll(`g.region#${reg.data.id} path`)[0];
+        element.style.fill = this.getHeatMapColor(reg.data.number_of_cases, maxCases);
+      });
+    }
+  }
 
   panzoom: any;
 
@@ -115,12 +134,17 @@ export class BwSvgMapComponent implements OnInit, AfterViewInit {
 
     this.panzoom.zoomBy(0.85);
     this.panzoom.pan({x: -20, y: -20});
-
   }
 
   public onRegionCLick(event: MouseEvent) {
     const selectedRegion = (event.target || event.currentTarget) as HTMLElement;
     const selectedRegionId = selectedRegion.id;
     this.regionClick.emit(selectedRegionId);
+  }
+
+  private getHeatMapColor(value: number, maxValue: number) {
+    const ratio = value / maxValue;
+    const h = (1.0 - ratio) * 240;
+    return 'hsl(' + h + ', 100%, 50%)';
   }
 }
