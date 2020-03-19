@@ -1,6 +1,7 @@
 # BWCoronaMap
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
+Display a map of coronavirus infections in Baden-Württemberg area.
+Including history graph per area. 
 
 ## Development server
 
