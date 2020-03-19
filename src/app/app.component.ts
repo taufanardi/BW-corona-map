@@ -5,6 +5,7 @@ import {clone} from 'ramda';
 import {Chart} from 'chart.js';
 import {BaseChartDirective} from 'ng2-charts';
 import Chance from 'chance';
+import {Subject} from "rxjs";
 
 const chance = new Chance();
 
@@ -16,6 +17,7 @@ const chance = new Chance();
 export class AppComponent implements AfterViewInit {
   title = 'BW-corona-map';
   regionData: RegionData[] = [];
+  regionData$: Subject<RegionData[]>  = new Subject<RegionData[]>();
   selectedRegion = '';
   panzoom: any;
   isMobile = false;
@@ -45,6 +47,7 @@ export class AppComponent implements AfterViewInit {
   constructor(public colorService: ColorService, private regionDataService: RegionDataService) {
     this.regionDataService.retrieveRegionData().subscribe(data => {
       this.regionData = data.reverse();
+      this.regionData$.next(this.regionData);
     });
 
     this.isMobile = window.screen.availHeight > window.screen.availWidth;

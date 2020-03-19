@@ -77,7 +77,7 @@
 
 .customizable-dashboard .widget-content .widget-chart {
   width: 100%;
-  height: calc(100% - 30px);
+  height: calc(100% - 60px);
 }
 
 .customizable-dashboard .widget-content .widget-feature-list {
@@ -761,7 +761,7 @@
   }
   .chart.vis-d3-maps-choropleth svg g.label text.buffer {
     stroke: white;
-    opacity: 0.5;
+    opacity: 0.9;
     stroke-width: 4px;
     stroke-linejoin: round;
   }
