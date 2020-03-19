@@ -2,7 +2,8 @@ import {AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Outpu
 import {RegionDataService} from '../../services/region-data.service';
 import svgPanZoom from 'svg-pan-zoom';
 import Hammer from 'hammerjs';
-import {RegionData} from "../../app.component";
+import {RegionData} from '../../app.component';
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-bw-svg-map',
@@ -27,7 +28,8 @@ export class BwSvgMapComponent implements OnInit, AfterViewInit {
       const maxCases = Math.max(...latestData.map(reg => reg.data.number_of_cases));
       latestData.forEach(reg => {
         const element = this.elementRef.nativeElement.querySelectorAll(`g.region#${reg.data.id} path`)[0];
-        element.style.fill = this.getHeatMapColor(reg.data.number_of_cases, maxCases);
+        // element.style.fill = this.getHeatMapColor(reg.data.number_of_cases, maxCases);
+        element.style.fill = this.getGradientScaleColor(reg.data.number_of_cases, maxCases);
       });
     }
   }
@@ -74,7 +76,6 @@ export class BwSvgMapComponent implements OnInit, AfterViewInit {
             pannedX = 0;
             pannedY = 0;
           }
-
           // Pan only the difference
           instance.panBy({x: ev.deltaX - pannedX, y: ev.deltaY - pannedY});
           pannedX = ev.deltaX;
@@ -88,7 +89,6 @@ export class BwSvgMapComponent implements OnInit, AfterViewInit {
             initialScale = instance.getZoom();
             instance.zoomAtPoint(initialScale * ev.scale, {x: ev.center.x, y: ev.center.y});
           }
-
           instance.zoomAtPoint(initialScale * ev.scale, {x: ev.center.x, y: ev.center.y});
         });
 
@@ -144,7 +144,16 @@ export class BwSvgMapComponent implements OnInit, AfterViewInit {
 
   private getHeatMapColor(value: number, maxValue: number) {
     const ratio = value / maxValue;
-    const h = (1.0 - ratio) * 240;
-    return 'hsl(' + h + ', 100%, 50%)';
+    const hue = ((1 - ratio) * 80).toString(10);
+    return ['hsl(', hue, ',100%,50%)'].join('');
+  }
+
+  private getGradientScaleColor(value: number, maxValue: number) {
+    const ratio = value / maxValue;
+    const colorScheme = ['LightGrey' as any,  'DarkOrange' as any, 'Red' as any];
+    const colorScale = d3.scaleLinear()
+      .domain([0, 0.5, 1.0])
+      .range(colorScheme);
+    return colorScale(ratio);
   }
 }
