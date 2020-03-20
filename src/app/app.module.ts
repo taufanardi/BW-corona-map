@@ -6,9 +6,9 @@ import {BwSvgMapComponent} from './components/bw-svg-map/bw-svg-map.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DashboardModule, ColorServiceModule, SparkModule, IconModule} from '@ux-aspects/ux-aspects';
-import 'chart.js';
+import {DashboardModule, ColorServiceModule, SparkModule, IconModule, AlertModule} from '@ux-aspects/ux-aspects';
 import {ChartsModule} from 'ng2-charts';
+import 'chart.js';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import {ChartsModule} from 'ng2-charts';
     ColorServiceModule,
     SparkModule,
     ChartsModule,
-    IconModule
+    IconModule,
+    AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

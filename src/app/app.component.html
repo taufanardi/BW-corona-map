@@ -5,7 +5,7 @@
 
   <ux-dashboard-widget id="analytics-1-widget"
                        name="Usage Analytics"
-                       [colSpan]="4"
+                       [colSpan]="5"
                        [rowSpan]="mapRowSpan"
                        [resizable]="true">
 
@@ -38,19 +38,19 @@
          [class.widget-grabbing]="historyHandle.isGrabbing">
 
       <h3 class="widget-title">History Graph
-        <span *ngIf="!selectedRegion || showAllBWArea">Total</span>
+        <span *ngIf="showAllBWArea">Total</span>
         <span *ngIf="selectedRegion && !showAllBWArea">{{selectedRegion.data.name}}</span>
       </h3>
 
       <div class="sub-info">
-        <p *ngIf="todaysCases">Total cases until today: <span > {{todaysCases}} </span></p>
+        <p *ngIf="todaysCases">Total cases per today: <span> {{todaysCases}} </span></p>
         <div class="toggle-all-bw-area">
           Show total
           <label class="switch">
             <input type="checkbox"
                    [(ngModel)]="showAllBWArea"
                    [ngModelOptions]="{standalone: true}"
-                   (change)="generateChartData(null)">
+                   (change)="generateChartData()">
             <span class="slider round"></span>
           </label>
         </div>
@@ -94,17 +94,32 @@
     </div>
   </ux-dashboard-widget>
 
+
   <ux-dashboard-widget id="info-widget"
                        name="Info"
                        [colSpan]="3"
                        [rowSpan]="detailRowSpan">
-    <div class="widget-content prominent"
+    <div class="widget-content prominent info"
          [class.widget-grabbing]="infoHandle.isGrabbing">
 
       <h3 class="widget-title">Further Info
-        <span *ngIf="!selectedRegion || showAllBWArea">Total</span>
+        <span *ngIf="showAllBWArea">Total</span>
         <span *ngIf="selectedRegion && !showAllBWArea">{{selectedRegion.data.name}}</span>
       </h3>
+
+      <div class="sub-info">
+        <p *ngIf="todaysCases">Total cases per today: <span> {{todaysCases}} </span></p>
+        <div class="toggle-all-bw-area">
+          Show total
+          <label class="switch">
+            <input type="checkbox"
+                   [(ngModel)]="showAllBWArea"
+                   [ngModelOptions]="{standalone: true}"
+                   (change)="generateChartData()">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
 
       <button class="widget-grab-handle"
               uxDashboardGrabHandle
@@ -113,36 +128,62 @@
         <ux-icon name="pan"></ux-icon>
       </button>
 
-      <p class="info-title">Today: {{todaysDate}}</p>
+      <p class="info-title">{{todaysDate}}</p>
+
       <ng-container>
         <p class="info-value m-t text-black">
-          #Cases today: <b>{{todaysCases}}</b>
+          <ux-alert [type]="'error'"
+                    [dismissible]="false">
+            <ux-icon uxAlertIcon [name]="'status-warning-filled'"></ux-icon>
+            #Cases: <b>{{todaysCases}}</b>
+          </ux-alert>
         </p>
         <p class="info-value m-t text-black">
-          #Recoveries: <i>{{getNumberOfRecoveries()}}</i>
+          <ux-alert [type]="'success'"
+                    [dismissible]="false">
+            <ux-icon uxAlertIcon [name]="'status-approved-filled'"></ux-icon>
+            #Recoveries: <b>{{getNumberOfRecoveries()}}</b>
+          </ux-alert>
         </p>
         <p>
           Number of recoveries is detected by calculating decreasing number of cases per day per region. That means:
         </p>
         <ol>
-          <li>Number of occurrences where a patient is declared that s(he) has been recovered, thus is not included the the graph anymore.</li>
+          <li>Number of occurrences where a patient is declared that s(he) has been recovered, thus is not included the
+            the graph anymore.
+          </li>
           <li>However this patient <u><i>could</i></u> be contracted the virus again.</li>
         </ol>
-        <i>So it does not represents exactly number of poeple that recovered, but to be precise number of cases where patient is declared to be recovered.</i>
+        <i>So it does not represents exactly number of poeple that recovered, but to be precise number of cases where
+          patient is declared to be recovered.</i>
       </ng-container>
 
-      <hr>
-      <small>Stay tuned more info is coming.. <i>*not more cases hopefully</i>😇</small>
+      <div><hr>
+        <small>Stay tuned more info is coming.. <i>*not more cases hopefully</i>😇</small>
+      </div>
 
-      <hr>
+    </div>
+  </ux-dashboard-widget>
+
+
+  <ux-dashboard-widget id="about"
+                       name="Info"
+                       [colSpan]="3"
+                       [rowSpan]="1">
+    <div class="widget-content info"
+         [class.widget-grabbing]="infoHandle.isGrabbing">
+
+      <h3 class="widget-title">About</h3>
+
       <p class="info-value m-t text-black">
         <i>Display a map of coronavirus infections in Baden-Württemberg area, including history graph per area.<br>
-          Data is taken from <a href="https://sozialministerium.baden-wuerttemberg.de/" target="_blank">https://sozialministerium.baden-wuerttemberg.de/</a>and updated daily.</i>
-        <br>
+          Data is taken from <a href="https://sozialministerium.baden-wuerttemberg.de/" target="_blank">https://sozialministerium.baden-wuerttemberg.de/</a>and
+          updated daily.</i>
       </p>
 
       <div>
-        <img src="assets/github-icon.png" width="50px" height="40px"> <a href="https://github.com/taufanardi/BW-corona-map" target="_blank">Fork this project</a>
+        <img src="assets/github-icon.png" width="50px" height="40px"> <a
+        href="https://github.com/taufanardi/BW-corona-map" target="_blank">Fork this project</a>
       </div>
 
     </div>

@@ -3,9 +3,8 @@ import {ColorService, DashboardOptions} from '@ux-aspects/ux-aspects';
 import {RegionDataService} from './services/region-data.service';
 import {clone} from 'ramda';
 import {Chart} from 'chart.js';
-import {BaseChartDirective} from 'ng2-charts';
+import {BehaviorSubject} from 'rxjs';
 import Chance from 'chance';
-import {BehaviorSubject, Subject} from 'rxjs';
 
 const chance = new Chance();
 
@@ -20,7 +19,7 @@ export class AppComponent implements AfterViewInit {
   public title = 'BW-corona-map';
   public regionData$: BehaviorSubject<RegionData[]>  = new BehaviorSubject<RegionData[]>(null);
   public selectedRegion: RegionData;
-  public isMobile = false;
+  public isPotraitMode = false;
   public showAllBWArea = true;
   public totalRecoveries = 0;
   public regionById: any = {};
@@ -48,11 +47,11 @@ export class AppComponent implements AfterViewInit {
     this.regionDataService.retrieveRegionData().subscribe(data => {
       const regionData = data.reverse();
       this.regionData$.next(regionData);
-      this.generateChartData(null);
+      this.generateChartData();
       this.generateNumberOfRecovery();
     });
 
-    this.isMobile = window.screen.availHeight > window.screen.availWidth;
+    this.isPotraitMode = window.screen.availHeight > window.screen.availWidth;
   }
 
   ngAfterViewInit() {
@@ -90,7 +89,7 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  public generateChartData(regionId: string) {
+  public generateChartData(regionId?: string) {
     const regionByDate = this.regionData$.value.reduce((accumulator, currentData, currentIndex, array) => {
       (accumulator[currentData.date] = accumulator[currentData.date] || []).push(currentData);
       return accumulator;
@@ -190,11 +189,11 @@ export class AppComponent implements AfterViewInit {
   }
 
   public get mapRowSpan() {
-    return this.isMobile ? 2 : 6;
+    return this.isPotraitMode ? 2 : 7;
   }
 
   public get detailRowSpan() {
-    return this.isMobile ? 2 : 3;
+    return this.isPotraitMode ? 2 : 3;
   }
 }
 
