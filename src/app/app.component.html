@@ -1,7 +1,7 @@
 <ux-dashboard #dashboard
               class="customizable-dashboard"
               [class.dashboard-grabbing]="dashboard.isGrabbing"
-              [options]="options">
+              [options]="dashboardOptions">
 
   <ux-dashboard-widget id="analytics-1-widget"
                        name="Usage Analytics"
@@ -12,8 +12,8 @@
     <div class="widget-content"
          [class.widget-grabbing]="usageHandle.isGrabbing">
 
-      <h3 class="widget-title">Infection Map</h3>
-      <p>Click desired area in the map to see the infection rate and history.</p>
+      <h3 class="widget-title">Coronavirus Map in Baden Württemberg</h3>
+      <p>Click desired area on the map to see the infection rate and history.</p>
 
       <button class="widget-grab-handle"
               uxDashboardGrabHandle
@@ -22,9 +22,10 @@
         <ux-icon name="pan"></ux-icon>
       </button>
 
-      <div  class="chart vis-height-fit theme-swr-aktuell vis-d3-maps-choropleth" data-gr-c-s-loaded="true">
-        <app-bw-svg-map (regionClick)="onRegionClick($event)" [regionData]="regionData$ | async"></app-bw-svg-map>
-      </div>
+      <app-bw-svg-map
+        (regionClick)="onRegionClick($event)"
+        [regionData]="regionData$ | async">]
+      </app-bw-svg-map>
 
     </div>
   </ux-dashboard-widget>
@@ -36,8 +37,24 @@
     <div class="widget-content"
          [class.widget-grabbing]="historyHandle.isGrabbing">
 
-      <h3 class="widget-title">History Graph {{selectedRegion}}</h3>
-      <p *ngIf="todaysCases">Total cases until today: <span > {{todaysCases}} </span></p>
+      <h3 class="widget-title">History Graph
+        <span *ngIf="!selectedRegion || showAllBWArea">Total</span>
+        <span *ngIf="selectedRegion && !showAllBWArea">{{selectedRegion.data.name}}</span>
+      </h3>
+
+      <div class="sub-info">
+        <p *ngIf="todaysCases">Total cases until today: <span > {{todaysCases}} </span></p>
+        <div class="toggle-all-bw-area">
+          Show total
+          <label class="switch">
+            <input type="checkbox"
+                   [(ngModel)]="showAllBWArea"
+                   [ngModelOptions]="{standalone: true}"
+                   (change)="generateChartData(null)">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
 
       <button class="widget-grab-handle"
               uxDashboardGrabHandle
@@ -84,7 +101,10 @@
     <div class="widget-content prominent"
          [class.widget-grabbing]="infoHandle.isGrabbing">
 
-      <h3 class="widget-title">Further Info (more detail is coming..)</h3>
+      <h3 class="widget-title">Further Info
+        <span *ngIf="!selectedRegion || showAllBWArea">Total</span>
+        <span *ngIf="selectedRegion && !showAllBWArea">{{selectedRegion.data.name}}</span>
+      </h3>
 
       <button class="widget-grab-handle"
               uxDashboardGrabHandle
@@ -94,14 +114,25 @@
       </button>
 
       <p class="info-title">Today: {{todaysDate}}</p>
-      <ng-container *ngIf="selectedRegion">
+      <ng-container>
         <p class="info-value m-t text-black">
           #Cases today: <b>{{todaysCases}}</b>
         </p>
         <p class="info-value m-t text-black">
-          #Recovery: <i>Coming soon..</i>
+          #Recoveries: <i>{{getNumberOfRecoveries()}}</i>
         </p>
+        <p>
+          Number of recoveries is detected by calculating decreasing number of cases per day per region. That means:
+        </p>
+        <ol>
+          <li>Number of occurrences where a patient is declared that s(he) has been recovered, thus is not included the the graph anymore.</li>
+          <li>However this patient <u><i>could</i></u> be contracted the virus again.</li>
+        </ol>
+        <i>So it does not represents exactly number of poeple that recovered, but to be precise number of cases where patient is declared to be recovered.</i>
       </ng-container>
+
+      <hr>
+      <small>Stay tuned more info is coming.. <i>*not more cases hopefully</i>😇</small>
 
       <hr>
       <p class="info-value m-t text-black">

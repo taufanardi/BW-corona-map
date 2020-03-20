@@ -5,7 +5,7 @@ import {clone} from 'ramda';
 import {Chart} from 'chart.js';
 import {BaseChartDirective} from 'ng2-charts';
 import Chance from 'chance';
-import {Subject} from "rxjs";
+import {BehaviorSubject, Subject} from 'rxjs';
 
 const chance = new Chance();
 
@@ -15,28 +15,28 @@ const chance = new Chance();
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  title = 'BW-corona-map';
-  regionData: RegionData[] = [];
-  regionData$: Subject<RegionData[]>  = new Subject<RegionData[]>();
-  selectedRegion = '';
-  panzoom: any;
-  isMobile = false;
 
-  // access the chart directive properties
-  @ViewChild(BaseChartDirective, {static: true}) baseChart: BaseChartDirective;
+  // variables used for template bindings
+  public title = 'BW-corona-map';
+  public regionData$: BehaviorSubject<RegionData[]>  = new BehaviorSubject<RegionData[]>(null);
+  public selectedRegion: RegionData;
+  public isMobile = false;
+  public showAllBWArea = true;
+  public totalRecoveries = 0;
+  public regionById: any = {};
 
-  // configure the directive data
-  barChartData: Chart.ChartDataSets[] = [{
+  // variables for chart bindings
+  public barChartData: Chart.ChartDataSets[] = [{
     data: [],
     borderWidth: 1
   }];
+  public barChartLabels: string[] = [];
+  public barChartOptions: Chart.ChartOptions;
+  public barChartColors: any;
+  public barChartLegend = false;
 
-  barChartLabels: string[] = [];
-  barChartOptions: Chart.ChartOptions;
-  barChartLegend: boolean = false;
-  barChartColors: any;
-
-  options: DashboardOptions = {
+  // dashboard configuration
+  public dashboardOptions: DashboardOptions = {
     columns: 8,
     padding: 10,
     rowHeight: 220,
@@ -46,8 +46,10 @@ export class AppComponent implements AfterViewInit {
 
   constructor(public colorService: ColorService, private regionDataService: RegionDataService) {
     this.regionDataService.retrieveRegionData().subscribe(data => {
-      this.regionData = data.reverse();
-      this.regionData$.next(this.regionData);
+      const regionData = data.reverse();
+      this.regionData$.next(regionData);
+      this.generateChartData(null);
+      this.generateNumberOfRecovery();
     });
 
     this.isMobile = window.screen.availHeight > window.screen.availWidth;
@@ -57,14 +59,40 @@ export class AppComponent implements AfterViewInit {
   }
 
   public onRegionClick(regionName) {
-    // alert('Region: ' + regionName);
+    this.showAllBWArea = false;
     this.generateChartData(regionName);
   }
 
-  private generateChartData(regionId: string) {
-    const groupByProperty = 'date';
-    const regionByDate = this.regionData.reduce((accumulator, currentData, currentIndex, array) => {
-      (accumulator[currentData[groupByProperty]] = accumulator[currentData[groupByProperty]] || []).push(currentData);
+  private generateNumberOfRecovery() {
+    this.regionById = this.regionData$.value.reduce((accumulator, currentData, currentIndex, array) => {
+      (accumulator[currentData.data.id] = accumulator[currentData.data.id] || []).push(currentData);
+      return accumulator;
+    }, {});
+
+    const detectRecoveries = (regions: RegionData[]) => {
+      let recoveries = 0;
+      for (let i = 1; i < regions.length; i++) {
+        const currRegion = regions[i];
+        const prevRegion = regions[i - 1];
+        if (currRegion.data.number_of_cases < prevRegion.data.number_of_cases) {
+          recoveries = recoveries + prevRegion.data.number_of_cases - currRegion.data.number_of_cases;
+        }
+      }
+      return recoveries;
+    };
+
+    this.totalRecoveries = 0;
+    for (const key in this.regionById) {
+      const data = this.regionById[key] as RegionData[];
+      const recoveries = detectRecoveries(data);
+      this.regionById[key].recoveries = recoveries;
+      this.totalRecoveries = this.totalRecoveries + recoveries;
+    }
+  }
+
+  public generateChartData(regionId: string) {
+    const regionByDate = this.regionData$.value.reduce((accumulator, currentData, currentIndex, array) => {
+      (accumulator[currentData.date] = accumulator[currentData.date] || []).push(currentData);
       return accumulator;
     }, {});
 
@@ -72,30 +100,38 @@ export class AppComponent implements AfterViewInit {
     this.barChartData[0].data = [];
 
     for (const key in regionByDate) {
-      const regions = regionByDate[key];
-      const dataset1 = this.barChartData[0].data as Chart.ChartPoint[];
+      const regions = regionByDate[key] as RegionData[];
+      const dataset = this.barChartData[0].data as Chart.ChartPoint[];
       this.barChartLabels.push(key);
 
-      regions
-        .filter(reg => reg.data.id === regionId)
-        .forEach((reg, idx) => {
-          this.selectedRegion = reg.data.name;
-          dataset1.push(reg.data.number_of_cases);
+      if (this.showAllBWArea) {
+        const totalCases = regions.reduce((accumulator, currRegion) => {
+          return accumulator + currRegion.data.number_of_cases;
+        }, 0);
+        dataset.push(totalCases as any);
+      } else {
+        const regId = regionId ? regionId : this.selectedRegion ? this.selectedRegion.data.id : ' ';
+        const dataPerRegion = regions.filter(reg => reg.data.id === regId);
+        dataPerRegion.forEach((reg, idx) => {
+          this.selectedRegion = reg;
+          dataset.push(reg.data.number_of_cases as any);
         });
+      }
     }
 
     // Prepare colors used in chart
     const borderColor = this.colorService.getColor('grey2').setAlpha(0.5).toRgba();
+    const tooltipBackgroundColor = this.colorService.getColor('grey2').toHex();
     const barBackgroundColor = this.colorService.getColor('chart1').setAlpha(0.1).toRgba();
     const barHoverBackgroundColor = this.colorService.getColor('chart1').setAlpha(0.2).toRgba();
     const barBorderColor = this.colorService.getColor('chart1').toHex();
-    const tooltipBackgroundColor = this.colorService.getColor('grey2').toHex();
 
     this.barChartOptions = {
       maintainAspectRatio: false,
       responsive: true,
       scales: {
         xAxes: [{
+          stacked: true,
           gridLines: {
             display: true,
             zeroLineColor: borderColor,
@@ -103,6 +139,7 @@ export class AppComponent implements AfterViewInit {
           }
         }],
         yAxes: [{
+          stacked: true,
           type: 'linear',
           gridLines: {
             zeroLineColor: borderColor
@@ -136,6 +173,11 @@ export class AppComponent implements AfterViewInit {
         borderColor: barBorderColor
       }
     ];
+  }
+
+  public getNumberOfRecoveries() {
+    return this.showAllBWArea ? this.totalRecoveries :
+           this.selectedRegion ? this.regionById[this.selectedRegion.data.id].recoveries : '';
   }
 
   public get todaysDate() {
