@@ -35,6 +35,7 @@ export class BwSvgMapComponent implements OnInit, AfterViewInit {
   }
 
   panzoom: any;
+  selectedRegionId: string;
 
   constructor(private elementRef: ElementRef) {
   }
@@ -136,10 +137,14 @@ export class BwSvgMapComponent implements OnInit, AfterViewInit {
     this.panzoom.pan({x: -20, y: -20});
   }
 
+  public isSelected(regionId: string) {
+    return this.selectedRegionId === regionId;
+  }
+
   public onRegionCLick(event: MouseEvent) {
     const selectedRegion = (event.target || event.currentTarget) as HTMLElement;
-    const selectedRegionId = selectedRegion.id;
-    this.regionClick.emit(selectedRegionId);
+    this.selectedRegionId = selectedRegion.id;
+    this.regionClick.emit(this.selectedRegionId);
   }
 
   private getHeatMapColor(value: number, maxValue: number) {
