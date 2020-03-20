@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server": "ng serve BW-corona-map --baseHref /BW-corona-map/",
+    "deploy": "ng deploy --baseHref /BW-corona-map/"
   },
   "private": true,
   "dependencies": {
