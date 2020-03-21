@@ -1558,6 +1558,8 @@ SOFTWARE.
 
 
 
+ngx-bootstrap/buttons
+
 regenerator-runtime
 MIT
 MIT License
