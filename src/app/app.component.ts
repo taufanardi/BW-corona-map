@@ -1,12 +1,8 @@
-import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {ColorService, DashboardOptions} from '@ux-aspects/ux-aspects';
 import {RegionDataService} from './services/region-data.service';
-import {clone} from 'ramda';
 import {Chart} from 'chart.js';
 import {BehaviorSubject} from 'rxjs';
-import Chance from 'chance';
-
-const chance = new Chance();
 
 @Component({
   selector: 'app-root',
@@ -26,13 +22,22 @@ export class AppComponent implements AfterViewInit {
 
   // variables for chart bindings
   public barChartData: Chart.ChartDataSets[] = [{
+    label: 'Total Active cases',
     data: [],
-    borderWidth: 1
+    borderWidth: 1,
+    categoryPercentage: 0.9,
+    hidden: false
+  }, {
+    label: 'New cases',
+    data: [],
+    borderWidth: 1,
+    categoryPercentage: 0.7,
+    hidden: false
   }];
   public barChartLabels: string[] = [];
   public barChartOptions: Chart.ChartOptions;
   public barChartColors: any;
-  public barChartLegend = false;
+  public barChartLegend = true;
 
   // dashboard configuration
   public dashboardOptions: DashboardOptions = {
@@ -96,41 +101,55 @@ export class AppComponent implements AfterViewInit {
     }, {});
 
     this.barChartLabels = [];
-    this.barChartData[0].data = [];
 
+    const datasetHistory = this.barChartData[0].data = [];
     for (const key in regionByDate) {
       const regions = regionByDate[key] as RegionData[];
-      const dataset = this.barChartData[0].data as Chart.ChartPoint[];
       this.barChartLabels.push(key);
 
       if (this.showAllBWArea) {
         const totalCases = regions.reduce((accumulator, currRegion) => {
           return accumulator + currRegion.data.number_of_cases;
         }, 0);
-        dataset.push(totalCases as any);
+        datasetHistory.push(totalCases as any);
       } else {
         const regId = regionId ? regionId : this.selectedRegion ? this.selectedRegion.data.id : ' ';
-        const dataPerRegion = regions.filter(reg => reg.data.id === regId);
-        dataPerRegion.forEach((reg, idx) => {
-          this.selectedRegion = reg;
-          dataset.push(reg.data.number_of_cases as any);
-        });
+        this.selectedRegion = regions.find(reg => reg.data.id === regId);
+        if (this.selectedRegion) {
+          datasetHistory.push(this.selectedRegion.data.number_of_cases as any);
+        }
       }
+
+      this.drawChart();
     }
 
+    // Generate delta growth
+    this.barChartData[1].data = datasetHistory.map((numberOfCases, idx) => {
+      return idx === 0 ? numberOfCases : numberOfCases - datasetHistory[idx - 1];
+    });
+  }
+
+  private drawChart() {
     // Prepare colors used in chart
     const borderColor = this.colorService.getColor('grey2').setAlpha(0.5).toRgba();
     const tooltipBackgroundColor = this.colorService.getColor('grey2').toHex();
     const barBackgroundColor = this.colorService.getColor('chart1').setAlpha(0.1).toRgba();
     const barHoverBackgroundColor = this.colorService.getColor('chart1').setAlpha(0.2).toRgba();
     const barBorderColor = this.colorService.getColor('chart1').toHex();
+    const barBackgroundColor2 = this.colorService.getColor('chart2').setAlpha(0.9).toRgba();
+    const barHoverBackgroundColor2 = this.colorService.getColor('chart2').setAlpha(0.9).toRgba();
+    const barBorderColor2 = this.colorService.getColor('chart2').toHex();
 
     this.barChartOptions = {
       maintainAspectRatio: false,
       responsive: true,
+      hover: {
+        mode: 'nearest'
+      },
       scales: {
         xAxes: [{
           stacked: true,
+          offset: true,
           gridLines: {
             display: true,
             zeroLineColor: borderColor,
@@ -138,14 +157,15 @@ export class AppComponent implements AfterViewInit {
           }
         }],
         yAxes: [{
-          stacked: true,
-          type: 'linear',
+          stacked: false,
           gridLines: {
             zeroLineColor: borderColor
           },
           ticks: {
             min: 0,
-            max: Math.max(...(this.barChartData[0].data as number[])),
+            max: this.barChartData[0].hidden ?
+              Math.max(...(this.barChartData[1].data as number[])) :
+              Math.max(...(this.barChartData[0].data as number[])),
             stepSize: 1
           } as Chart.LinearTickOptions
         }]
@@ -155,10 +175,10 @@ export class AppComponent implements AfterViewInit {
         cornerRadius: 0,
         callbacks: {
           title: (item: Chart.ChartTooltipItem[]) => {
-            return;
+            return `${item[0].xLabel}`;
           },
-          label: (item: Chart.ChartTooltipItem) => {
-            return `date: ${item.xLabel}, cases: ${item.yLabel}`;
+          label: (item: Chart.ChartTooltipItem, aa) => {
+            return (item.datasetIndex === 0 ? 'Total Cases:' : 'New Cases:') + item.yLabel;
           }
         },
         displayColors: false
@@ -170,11 +190,21 @@ export class AppComponent implements AfterViewInit {
         backgroundColor: barBackgroundColor,
         hoverBackgroundColor: barHoverBackgroundColor,
         borderColor: barBorderColor
+      },
+      {
+        backgroundColor: barBackgroundColor2,
+        hoverBackgroundColor: barHoverBackgroundColor2,
+        borderColor: barBorderColor2
       }
     ];
   }
 
-  public getNumberOfRecoveries() {
+  public toggleChart(chartDataset: Chart.ChartDataSets) {
+    chartDataset.hidden = !chartDataset.hidden;
+
+  }
+
+  public get numberOfRecoveries() {
     return this.showAllBWArea ? this.totalRecoveries :
            this.selectedRegion ? this.regionById[this.selectedRegion.data.id].recoveries : '';
   }
@@ -188,12 +218,36 @@ export class AppComponent implements AfterViewInit {
     return this.barChartData[0].data[lastIndex];
   }
 
+  public get newCases() {
+    const lastIndex = this.barChartData[0].data.length - 1;
+    const newCases = (this.barChartData[0].data[lastIndex] as number) - (this.barChartData[0].data[lastIndex - 1] as number);
+    return isNaN(newCases) ? '' : newCases;
+  }
+
+  /* left panel map layout */
   public get mapRowSpan() {
     return this.isPotraitMode ? 2 : 7;
   }
 
-  public get detailRowSpan() {
+  public get mapColSpan() {
+    return this.isPotraitMode ? 4 : 4;
+  }
+
+  /* right panel layout */
+  public get sideColSpan() {
+    return 4;
+  }
+
+  public get historyRowSpan() {
     return this.isPotraitMode ? 2 : 3;
+  }
+
+  public get detailRowSpan() {
+    return 3;
+  }
+
+  public get aboutRowSpan() {
+    return this.isPotraitMode ? 2 : 1;
   }
 }
 

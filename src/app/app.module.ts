@@ -6,7 +6,15 @@ import {BwSvgMapComponent} from './components/bw-svg-map/bw-svg-map.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DashboardModule, ColorServiceModule, SparkModule, IconModule, AlertModule} from '@ux-aspects/ux-aspects';
+import {
+  DashboardModule,
+  ColorServiceModule,
+  SparkModule,
+  IconModule,
+  AlertModule,
+  CheckboxModule, ToggleSwitchModule
+} from '@ux-aspects/ux-aspects';
+import {ButtonsModule} from 'ngx-bootstrap';
 import {ChartsModule} from 'ng2-charts';
 import 'chart.js';
 
@@ -26,7 +34,10 @@ import 'chart.js';
     SparkModule,
     ChartsModule,
     IconModule,
-    AlertModule
+    AlertModule,
+    ButtonsModule.forRoot(),
+    CheckboxModule,
+    ToggleSwitchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
