@@ -88,7 +88,6 @@
     </div>
   </ux-dashboard-widget>
 
-
   <ux-dashboard-widget id="info-widget"
                        name="Info"
                        [colSpan]="sideColSpan"
@@ -125,24 +124,28 @@
             #New Cases: <b> {{newCases}} </b>
           </ux-alert>
         </p>
-        <p class="info-value m-t text-black">
-          <ux-alert [type]="'success'"
-                    [dismissible]="false">
-            <ux-icon uxAlertIcon [name]="'status-approved-filled'"></ux-icon>
-            #Recoveries: <b>{{numberOfRecoveries}}</b>
-          </ux-alert>
-        </p>
-        <p>
-          Number of recoveries is detected by calculating decreasing number of cases per day per region. That means:
-        </p>
-        <ol>
-          <li>Number of occurrences where a patient is declared that s(he) has been recovered, thus is not included the
-            the graph anymore.
-          </li>
-          <li>However this patient <u><i>could</i></u> be contracted the virus again.</li>
-        </ol>
-        <i>So it does not represents exactly number of poeple that recovered, but to be precise number of cases where
-          patient is declared to be recovered.</i>
+
+        <div [hidden]="true">
+          <p class="info-value m-t text-black">
+            <ux-alert [type]="'success'"
+                      [dismissible]="false">
+              <ux-icon uxAlertIcon [name]="'status-approved-filled'"></ux-icon>
+              #Recoveries: <b>{{numberOfRecoveries}}</b>
+            </ux-alert>
+          </p>
+          <p>
+            Number of recoveries is detected by calculating decreasing number of cases per day per region. That means:
+          </p>
+          <ol>
+            <li>Number of occurrences where a patient is declared that s(he) has been recovered, thus is not included the
+              the graph anymore.
+            </li>
+            <li>However this patient <u><i>could</i></u> be contracted the virus again.</li>
+          </ol>
+          <i>So it does not represents exactly number of poeple that recovered, but to be precise number of cases where
+            patient is declared to be recovered.</i>
+        </div>
+
       </ng-container>
 
       <div><hr>
@@ -151,7 +154,6 @@
 
     </div>
   </ux-dashboard-widget>
-
 
   <ux-dashboard-widget id="about"
                        name="Info"
@@ -165,7 +167,7 @@
       <p class="info-value m-t text-black">
         <i>Display a map of coronavirus infections in Baden-Württemberg area, including history graph per area.<br>
           Data is taken from <a href="https://sozialministerium.baden-wuerttemberg.de/" target="_blank">https://sozialministerium.baden-wuerttemberg.de/</a>and
-          updated daily <b>(usually they upload new data after 18:00 each day)</b>.</i>
+          updated daily <b>(usually they upload new data after 19:00 each day)</b>.</i>
       </p>
 
       <div>

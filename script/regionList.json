@@ -1,0 +1,178 @@
+[
+  {
+    "id": "alb-donau-kreis",
+    "name": "Alb-Donau-Kreis"
+  },
+  {
+    "id": "baden-baden-kreis",
+    "name": "Baden-Baden (Stadtkreis)"
+  },
+  {
+    "id": "biberach",
+    "name": "Biberach"
+  },
+  {
+    "id": "boeblingen",
+    "name": "Böblingen"
+  },
+  {
+    "id": "bodenseekreis",
+    "name": "Bodenseekreis"
+  },
+  {
+    "id": "breisgau-hochschwarzwald",
+    "name": "Breisgau-Hochschwarzwald"
+  },
+  {
+    "id": "calw",
+    "name": "Calw"
+  },
+  {
+    "id": "emmendingen",
+    "name": "Emmendingen"
+  },
+  {
+    "id": "enzkreis",
+    "name": "Enzkreis"
+  },
+  {
+    "id": "esslingen",
+    "name": "Esslingen"
+  },
+  {
+    "id": "freiburg-im-breisgau",
+    "name": "Freiburg im Breisgau (Stadtkreis)"
+  },
+  {
+    "id": "freudenstadt",
+    "name": "Freudenstadt"
+  },
+  {
+    "id": "goppingen",
+    "name": "Göppingen"
+  },
+  {
+    "id": "heidelberg-stadtkreis",
+    "name": "Heidelberg (Stadtkreis)"
+  },
+  {
+    "id": "heidenheim",
+    "name": "Heidenheim"
+  },
+  {
+    "id": "heilbronn",
+    "name": "Heilbronn"
+  },
+  {
+    "id": "heilbronn-kreis",
+    "name": "Heilbronn (Stadtkreis)"
+  },
+  {
+    "id": "hohenlohekreis",
+    "name": "Hohenlohekreis"
+  },
+  {
+    "id": "karlsruhe",
+    "name": "Karlsruhe"
+  },
+  {
+    "id": "karlsruhe-kreis",
+    "name": "Karlsruhe (Stadtkreis)"
+  },
+  {
+    "id": "konstanz",
+    "name": "Konstanz"
+  },
+  {
+    "id": "loerrach",
+    "name": "Lörrach"
+  },
+  {
+    "id": "ludwigsburg",
+    "name": "Ludwigsburg"
+  },
+  {
+    "id": "main-tauber-kreis",
+    "name": "Main-Tauber-Kreis"
+  },
+  {
+    "id": "mannheim-stadtkreis",
+    "name": "Mannheim (Stadtkreis)"
+  },
+  {
+    "id": "neckar-odenwald-kreis",
+    "name": "Neckar-Odenwald-Kreis"
+  },
+  {
+    "id": "ortenaukreis",
+    "name": "Ortenaukreis"
+  },
+  {
+    "id": "ostalbkreis",
+    "name": "Ostalbkreis"
+  },
+  {
+    "id": "pforzheim-stadt-kreis",
+    "name": "Pforzheim (Stadtkreis)"
+  },
+  {
+    "id": "rastatt",
+    "name": "Rastatt"
+  },
+  {
+    "id": "ravensburg",
+    "name": "Ravensburg"
+  },
+  {
+    "id": "rems-murr-kreis",
+    "name": "Rems-Murr-Kreis"
+  },
+  {
+    "id": "reutlingen",
+    "name": "Reutlingen"
+  },
+  {
+    "id": "rhein-neckar-kreis",
+    "name": "Rhein-Neckar-Kreis"
+  },
+  {
+    "id": "rottweil",
+    "name": "Rottweil"
+  },
+  {
+    "id": "schwabisch-hall",
+    "name": "Schwäbisch Hall"
+  },
+  {
+    "id": "schwarzwald-baar-kreis",
+    "name": "Schwarzwald-Baar-Kreis"
+  },
+  {
+    "id": "sigmaringen",
+    "name": "Sigmaringen"
+  },
+  {
+    "id": "stuttgart",
+    "name": "Stuttgart"
+  },
+  {
+    "id": "tuebingen",
+    "name": "Tübingen"
+  },
+  {
+    "id": "tuttlingen",
+    "name": "Tuttlingen"
+  },
+  {
+    "id": "ulm-stadtkreis",
+    "name": "Ulm (Stadtkreis)"
+  },
+  {
+    "id": "waldshut",
+    "name": "Waldshut"
+  },
+  {
+    "id": "zollernabkreis",
+    "name": "Zollernalbkreis"
+  }
+]

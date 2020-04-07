@@ -119,14 +119,14 @@ export class AppComponent implements AfterViewInit {
           datasetHistory.push(this.selectedRegion.data.number_of_cases as any);
         }
       }
-
-      this.drawChart();
     }
 
     // Generate delta growth
     this.barChartData[1].data = datasetHistory.map((numberOfCases, idx) => {
       return idx === 0 ? numberOfCases : numberOfCases - datasetHistory[idx - 1];
     });
+
+    this.drawChart();
   }
 
   private drawChart() {
@@ -197,11 +197,6 @@ export class AppComponent implements AfterViewInit {
         borderColor: barBorderColor2
       }
     ];
-  }
-
-  public toggleChart(chartDataset: Chart.ChartDataSets) {
-    chartDataset.hidden = !chartDataset.hidden;
-
   }
 
   public get numberOfRecoveries() {
