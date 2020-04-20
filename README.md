@@ -3,6 +3,8 @@
 Display a map of coronavirus infections in Baden-Württemberg area, including history graph per area. 
 Data is taken from https://sozialministerium.baden-wuerttemberg.de/ and updated daily.
 
+A life version of this can be seen here: https://taufanardi.github.io/BW-corona-map/index.html
+
 ## Development server
 
 Run `ng serve /BW-corona-map/` for a dev server. Navigate to `http://localhost:4200/BW-corona-map/`. The app will automatically reload if you change any of the source files.
