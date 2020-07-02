@@ -1,6 +1,710 @@
 {
   "coronaBWHistory": [
     {
+      "date": "01-07-2020",
+      "data": {
+        "id": "alb-donau-kreis",
+        "name": "Alb-Donau-Kreis",
+        "number_of_cases": 658
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "baden-baden-kreis",
+        "name": "Baden-Baden (Stadtkreis)",
+        "number_of_cases": 185
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "biberach",
+        "name": "Biberach",
+        "number_of_cases": 616
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "boeblingen",
+        "name": "Böblingen",
+        "number_of_cases": 1451
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "bodenseekreis",
+        "name": "Bodenseekreis",
+        "number_of_cases": 297
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "breisgau-hochschwarzwald",
+        "name": "Breisgau-Hochschwarzwald",
+        "number_of_cases": 1134
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "calw",
+        "name": "Calw",
+        "number_of_cases": 761
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "emmendingen",
+        "name": "Emmendingen",
+        "number_of_cases": 532
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "enzkreis",
+        "name": "Enzkreis",
+        "number_of_cases": 658
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "esslingen",
+        "name": "Esslingen",
+        "number_of_cases": 1862
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "freiburg-im-breisgau",
+        "name": "Freiburg im Breisgau (Stadtkreis)",
+        "number_of_cases": 972
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "freudenstadt",
+        "name": "Freudenstadt",
+        "number_of_cases": 570
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "goppingen",
+        "name": "Göppingen",
+        "number_of_cases": 807
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "heidelberg-stadtkreis",
+        "name": "Heidelberg (Stadtkreis)",
+        "number_of_cases": 316
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "heidenheim",
+        "name": "Heidenheim",
+        "number_of_cases": 514
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "heilbronn",
+        "name": "Heilbronn",
+        "number_of_cases": 961
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "heilbronn-kreis",
+        "name": "Heilbronn (Stadtkreis)",
+        "number_of_cases": 472
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "hohenlohekreis",
+        "name": "Hohenlohekreis",
+        "number_of_cases": 779
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "karlsruhe",
+        "name": "Karlsruhe",
+        "number_of_cases": 1040
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "karlsruhe-kreis",
+        "name": "Karlsruhe (Stadtkreis)",
+        "number_of_cases": 422
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "konstanz",
+        "name": "Konstanz",
+        "number_of_cases": 469
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "loerrach",
+        "name": "Lörrach",
+        "number_of_cases": 666
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "ludwigsburg",
+        "name": "Ludwigsburg",
+        "number_of_cases": 1820
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "main-tauber-kreis",
+        "name": "Main-Tauber-Kreis",
+        "number_of_cases": 399
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "mannheim-stadtkreis",
+        "name": "Mannheim (Stadtkreis)",
+        "number_of_cases": 510
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "neckar-odenwald-kreis",
+        "name": "Neckar-Odenwald-Kreis",
+        "number_of_cases": 442
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "ortenaukreis",
+        "name": "Ortenaukreis",
+        "number_of_cases": 1214
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "ostalbkreis",
+        "name": "Ostalbkreis",
+        "number_of_cases": 1450
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "pforzheim-stadt-kreis",
+        "name": "Pforzheim (Stadtkreis)",
+        "number_of_cases": 425
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "rastatt",
+        "name": "Rastatt",
+        "number_of_cases": 527
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "ravensburg",
+        "name": "Ravensburg",
+        "number_of_cases": 561
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "rems-murr-kreis",
+        "name": "Rems-Murr-Kreis",
+        "number_of_cases": 1654
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "reutlingen",
+        "name": "Reutlingen",
+        "number_of_cases": 1555
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "rhein-neckar-kreis",
+        "name": "Rhein-Neckar-Kreis",
+        "number_of_cases": 968
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "rottweil",
+        "name": "Rottweil",
+        "number_of_cases": 679
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "schwabisch-hall",
+        "name": "Schwäbisch Hall",
+        "number_of_cases": 873
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "schwarzwald-baar-kreis",
+        "name": "Schwarzwald-Baar-Kreis",
+        "number_of_cases": 586
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "sigmaringen",
+        "name": "Sigmaringen",
+        "number_of_cases": 776
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "stuttgart",
+        "name": "Stuttgart",
+        "number_of_cases": 1544
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "tuebingen",
+        "name": "Tübingen",
+        "number_of_cases": 1294
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "tuttlingen",
+        "name": "Tuttlingen",
+        "number_of_cases": 515
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "ulm-stadtkreis",
+        "name": "Ulm (Stadtkreis)",
+        "number_of_cases": 288
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "waldshut",
+        "name": "Waldshut",
+        "number_of_cases": 311
+      }
+    },
+    {
+      "date": "01-07-2020",
+      "data": {
+        "id": "zollernabkreis",
+        "name": "Zollernalbkreis",
+        "number_of_cases": 1222
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "alb-donau-kreis",
+        "name": "Alb-Donau-Kreis",
+        "number_of_cases": 655
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "baden-baden-kreis",
+        "name": "Baden-Baden (Stadtkreis)",
+        "number_of_cases": 185
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "biberach",
+        "name": "Biberach",
+        "number_of_cases": 616
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "boeblingen",
+        "name": "Böblingen",
+        "number_of_cases": 1451
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "bodenseekreis",
+        "name": "Bodenseekreis",
+        "number_of_cases": 297
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "breisgau-hochschwarzwald",
+        "name": "Breisgau-Hochschwarzwald",
+        "number_of_cases": 1132
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "calw",
+        "name": "Calw",
+        "number_of_cases": 758
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "emmendingen",
+        "name": "Emmendingen",
+        "number_of_cases": 532
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "enzkreis",
+        "name": "Enzkreis",
+        "number_of_cases": 659
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "esslingen",
+        "name": "Esslingen",
+        "number_of_cases": 1860
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "freiburg-im-breisgau",
+        "name": "Freiburg im Breisgau (Stadtkreis)",
+        "number_of_cases": 972
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "freudenstadt",
+        "name": "Freudenstadt",
+        "number_of_cases": 570
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "goppingen",
+        "name": "Göppingen",
+        "number_of_cases": 804
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "heidelberg-stadtkreis",
+        "name": "Heidelberg (Stadtkreis)",
+        "number_of_cases": 315
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "heidenheim",
+        "name": "Heidenheim",
+        "number_of_cases": 514
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "heilbronn",
+        "name": "Heilbronn",
+        "number_of_cases": 962
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "heilbronn-kreis",
+        "name": "Heilbronn (Stadtkreis)",
+        "number_of_cases": 472
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "hohenlohekreis",
+        "name": "Hohenlohekreis",
+        "number_of_cases": 779
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "karlsruhe",
+        "name": "Karlsruhe",
+        "number_of_cases": 1039
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "karlsruhe-kreis",
+        "name": "Karlsruhe (Stadtkreis)",
+        "number_of_cases": 419
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "konstanz",
+        "name": "Konstanz",
+        "number_of_cases": 468
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "loerrach",
+        "name": "Lörrach",
+        "number_of_cases": 666
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "ludwigsburg",
+        "name": "Ludwigsburg",
+        "number_of_cases": 1813
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "main-tauber-kreis",
+        "name": "Main-Tauber-Kreis",
+        "number_of_cases": 399
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "mannheim-stadtkreis",
+        "name": "Mannheim (Stadtkreis)",
+        "number_of_cases": 505
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "neckar-odenwald-kreis",
+        "name": "Neckar-Odenwald-Kreis",
+        "number_of_cases": 442
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "ortenaukreis",
+        "name": "Ortenaukreis",
+        "number_of_cases": 1214
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "ostalbkreis",
+        "name": "Ostalbkreis",
+        "number_of_cases": 1449
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "pforzheim-stadt-kreis",
+        "name": "Pforzheim (Stadtkreis)",
+        "number_of_cases": 421
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "rastatt",
+        "name": "Rastatt",
+        "number_of_cases": 527
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "ravensburg",
+        "name": "Ravensburg",
+        "number_of_cases": 560
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "rems-murr-kreis",
+        "name": "Rems-Murr-Kreis",
+        "number_of_cases": 1648
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "reutlingen",
+        "name": "Reutlingen",
+        "number_of_cases": 1554
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "rhein-neckar-kreis",
+        "name": "Rhein-Neckar-Kreis",
+        "number_of_cases": 967
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "rottweil",
+        "name": "Rottweil",
+        "number_of_cases": 681
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "schwabisch-hall",
+        "name": "Schwäbisch Hall",
+        "number_of_cases": 873
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "schwarzwald-baar-kreis",
+        "name": "Schwarzwald-Baar-Kreis",
+        "number_of_cases": 586
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "sigmaringen",
+        "name": "Sigmaringen",
+        "number_of_cases": 776
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "stuttgart",
+        "name": "Stuttgart",
+        "number_of_cases": 1539
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "tuebingen",
+        "name": "Tübingen",
+        "number_of_cases": 1292
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "tuttlingen",
+        "name": "Tuttlingen",
+        "number_of_cases": 515
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "ulm-stadtkreis",
+        "name": "Ulm (Stadtkreis)",
+        "number_of_cases": 288
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "waldshut",
+        "name": "Waldshut",
+        "number_of_cases": 311
+      }
+    },
+    {
+      "date": "30-06-2020",
+      "data": {
+        "id": "zollernabkreis",
+        "name": "Zollernalbkreis",
+        "number_of_cases": 1220
+      }
+    },
+    {
       "date": "29-06-2020",
       "data": {
         "id": "alb-donau-kreis",
@@ -17246,710 +17950,6 @@
         "id": "zollernabkreis",
         "name": "Zollernalbkreis",
         "number_of_cases": 1131
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "alb-donau-kreis",
-        "name": "Alb-Donau-Kreis",
-        "number_of_cases": 543
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "baden-baden-kreis",
-        "name": "Baden-Baden (Stadtkreis)",
-        "number_of_cases": 182
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "biberach",
-        "name": "Biberach",
-        "number_of_cases": 535
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "boeblingen",
-        "name": "Böblingen",
-        "number_of_cases": 1306
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "bodenseekreis",
-        "name": "Bodenseekreis",
-        "number_of_cases": 283
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "breisgau-hochschwarzwald",
-        "name": "Breisgau-Hochschwarzwald",
-        "number_of_cases": 1094
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "calw",
-        "name": "Calw",
-        "number_of_cases": 689
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "emmendingen",
-        "name": "Emmendingen",
-        "number_of_cases": 514
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "enzkreis",
-        "name": "Enzkreis",
-        "number_of_cases": 564
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "esslingen",
-        "name": "Esslingen",
-        "number_of_cases": 1700
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "freiburg-im-breisgau",
-        "name": "Freiburg im Breisgau (Stadtkreis)",
-        "number_of_cases": 945
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "freudenstadt",
-        "name": "Freudenstadt",
-        "number_of_cases": 558
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "goppingen",
-        "name": "Göppingen",
-        "number_of_cases": 771
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "heidelberg-stadtkreis",
-        "name": "Heidelberg (Stadtkreis)",
-        "number_of_cases": 289
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "heidenheim",
-        "name": "Heidenheim",
-        "number_of_cases": 487
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "heilbronn",
-        "name": "Heilbronn",
-        "number_of_cases": 889
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "heilbronn-kreis",
-        "name": "Heilbronn (Stadtkreis)",
-        "number_of_cases": 418
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "hohenlohekreis",
-        "name": "Hohenlohekreis",
-        "number_of_cases": 747
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "karlsruhe",
-        "name": "Karlsruhe",
-        "number_of_cases": 914
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "karlsruhe-kreis",
-        "name": "Karlsruhe (Stadtkreis)",
-        "number_of_cases": 367
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "konstanz",
-        "name": "Konstanz",
-        "number_of_cases": 443
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "loerrach",
-        "name": "Lörrach",
-        "number_of_cases": 647
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "ludwigsburg",
-        "name": "Ludwigsburg",
-        "number_of_cases": 1646
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "main-tauber-kreis",
-        "name": "Main-Tauber-Kreis",
-        "number_of_cases": 374
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "mannheim-stadtkreis",
-        "name": "Mannheim (Stadtkreis)",
-        "number_of_cases": 466
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "neckar-odenwald-kreis",
-        "name": "Neckar-Odenwald-Kreis",
-        "number_of_cases": 385
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "ortenaukreis",
-        "name": "Ortenaukreis",
-        "number_of_cases": 1077
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "ostalbkreis",
-        "name": "Ostalbkreis",
-        "number_of_cases": 1212
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "pforzheim-stadt-kreis",
-        "name": "Pforzheim (Stadtkreis)",
-        "number_of_cases": 287
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "rastatt",
-        "name": "Rastatt",
-        "number_of_cases": 496
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "ravensburg",
-        "name": "Ravensburg",
-        "number_of_cases": 527
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "rems-murr-kreis",
-        "name": "Rems-Murr-Kreis",
-        "number_of_cases": 1354
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "reutlingen",
-        "name": "Reutlingen",
-        "number_of_cases": 1470
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "rhein-neckar-kreis",
-        "name": "Rhein-Neckar-Kreis",
-        "number_of_cases": 887
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "rottweil",
-        "name": "Rottweil",
-        "number_of_cases": 640
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "schwabisch-hall",
-        "name": "Schwäbisch Hall",
-        "number_of_cases": 807
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "schwarzwald-baar-kreis",
-        "name": "Schwarzwald-Baar-Kreis",
-        "number_of_cases": 520
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "sigmaringen",
-        "name": "Sigmaringen",
-        "number_of_cases": 772
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "stuttgart",
-        "name": "Stuttgart",
-        "number_of_cases": 1340
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "tuebingen",
-        "name": "Tübingen",
-        "number_of_cases": 1235
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "tuttlingen",
-        "name": "Tuttlingen",
-        "number_of_cases": 483
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "ulm-stadtkreis",
-        "name": "Ulm (Stadtkreis)",
-        "number_of_cases": 260
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "waldshut",
-        "name": "Waldshut",
-        "number_of_cases": 305
-      }
-    },
-    {
-      "date": "05-05-2020",
-      "data": {
-        "id": "zollernabkreis",
-        "name": "Zollernalbkreis",
-        "number_of_cases": 1117
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "alb-donau-kreis",
-        "name": "Alb-Donau-Kreis",
-        "number_of_cases": 543
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "baden-baden-kreis",
-        "name": "Baden-Baden (Stadtkreis)",
-        "number_of_cases": 182
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "biberach",
-        "name": "Biberach",
-        "number_of_cases": 535
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "boeblingen",
-        "name": "Böblingen",
-        "number_of_cases": 1306
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "bodenseekreis",
-        "name": "Bodenseekreis",
-        "number_of_cases": 284
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "breisgau-hochschwarzwald",
-        "name": "Breisgau-Hochschwarzwald",
-        "number_of_cases": 1094
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "calw",
-        "name": "Calw",
-        "number_of_cases": 682
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "emmendingen",
-        "name": "Emmendingen",
-        "number_of_cases": 513
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "enzkreis",
-        "name": "Enzkreis",
-        "number_of_cases": 564
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "esslingen",
-        "name": "Esslingen",
-        "number_of_cases": 1698
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "freiburg-im-breisgau",
-        "name": "Freiburg im Breisgau (Stadtkreis)",
-        "number_of_cases": 943
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "freudenstadt",
-        "name": "Freudenstadt",
-        "number_of_cases": 557
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "goppingen",
-        "name": "Göppingen",
-        "number_of_cases": 768
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "heidelberg-stadtkreis",
-        "name": "Heidelberg (Stadtkreis)",
-        "number_of_cases": 285
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "heidenheim",
-        "name": "Heidenheim",
-        "number_of_cases": 485
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "heilbronn",
-        "name": "Heilbronn",
-        "number_of_cases": 887
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "heilbronn-kreis",
-        "name": "Heilbronn (Stadtkreis)",
-        "number_of_cases": 415
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "hohenlohekreis",
-        "name": "Hohenlohekreis",
-        "number_of_cases": 744
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "karlsruhe",
-        "name": "Karlsruhe",
-        "number_of_cases": 912
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "karlsruhe-kreis",
-        "name": "Karlsruhe (Stadtkreis)",
-        "number_of_cases": 366
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "konstanz",
-        "name": "Konstanz",
-        "number_of_cases": 442
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "loerrach",
-        "name": "Lörrach",
-        "number_of_cases": 644
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "ludwigsburg",
-        "name": "Ludwigsburg",
-        "number_of_cases": 1646
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "main-tauber-kreis",
-        "name": "Main-Tauber-Kreis",
-        "number_of_cases": 373
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "mannheim-stadtkreis",
-        "name": "Mannheim (Stadtkreis)",
-        "number_of_cases": 465
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "neckar-odenwald-kreis",
-        "name": "Neckar-Odenwald-Kreis",
-        "number_of_cases": 381
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "ortenaukreis",
-        "name": "Ortenaukreis",
-        "number_of_cases": 1077
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "ostalbkreis",
-        "name": "Ostalbkreis",
-        "number_of_cases": 1195
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "pforzheim-stadt-kreis",
-        "name": "Pforzheim (Stadtkreis)",
-        "number_of_cases": 286
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "rastatt",
-        "name": "Rastatt",
-        "number_of_cases": 496
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "ravensburg",
-        "name": "Ravensburg",
-        "number_of_cases": 527
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "rems-murr-kreis",
-        "name": "Rems-Murr-Kreis",
-        "number_of_cases": 1342
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "reutlingen",
-        "name": "Reutlingen",
-        "number_of_cases": 1463
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "rhein-neckar-kreis",
-        "name": "Rhein-Neckar-Kreis",
-        "number_of_cases": 890
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "rottweil",
-        "name": "Rottweil",
-        "number_of_cases": 638
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "schwabisch-hall",
-        "name": "Schwäbisch Hall",
-        "number_of_cases": 805
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "schwarzwald-baar-kreis",
-        "name": "Schwarzwald-Baar-Kreis",
-        "number_of_cases": 515
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "sigmaringen",
-        "name": "Sigmaringen",
-        "number_of_cases": 772
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "stuttgart",
-        "name": "Stuttgart",
-        "number_of_cases": 1340
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "tuebingen",
-        "name": "Tübingen",
-        "number_of_cases": 1232
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "tuttlingen",
-        "name": "Tuttlingen",
-        "number_of_cases": 483
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "ulm-stadtkreis",
-        "name": "Ulm (Stadtkreis)",
-        "number_of_cases": 260
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "waldshut",
-        "name": "Waldshut",
-        "number_of_cases": 305
-      }
-    },
-    {
-      "date": "04-05-2020",
-      "data": {
-        "id": "zollernabkreis",
-        "name": "Zollernalbkreis",
-        "number_of_cases": 1117
       }
     }
   ],
